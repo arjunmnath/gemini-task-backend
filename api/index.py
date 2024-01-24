@@ -81,9 +81,4 @@ convo = model.start_chat(history=[
 def main():
     prompt = request.args.get('prompt')
     convo.send_message(prompt) 
-    print(convo.last.text)
-    response = jsonify(response = convo.last.text)
-    response.headers['Access-Control-Allow-Credentials'] = True
-    response.headers['Access-Control-Allow-Origin'] = '*'
-    response.headers['']
-    return response
+    return jsonify(response = convo.last.text)
