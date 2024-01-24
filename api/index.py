@@ -89,13 +89,7 @@ convo = model.start_chat(history=[
         "parts": [
             "Wash the cut properly to prevent infection and stop the bleeding by applying pressure for 1-2minutes until bleeding stops. Apply Petroleum Jelly to make sure that the wound is moist for quick healing. Finally cover the cut with a sterile bandage. Pain relievers such as acetaminophen can be applied."]
         },
-    {
-        "role": "user",
-        "parts": ["How to cure abrasions?"]
-        },
-    {
-
-        }
+       }
     ])
 @app.route("/")
 @cross_origin()
