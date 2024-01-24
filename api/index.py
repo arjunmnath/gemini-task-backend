@@ -78,13 +78,25 @@ convo = model.start_chat(history=[
   },
 ])
 
-
+  # res.setHeader('Access-Control-Allow-Credentials', true)
+  # res.setHeader('Access-Control-Allow-Origin', '*')
+  # // another common pattern
+  # // res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
+  # res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT')
+  # res.setHeader(
+  #   'Access-Control-Allow-Headers',
+  #   'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+  # )
 @app.route('/', methods=['GET'])
 def main():
+    res
     prompt = request.args.get('prompt')
     convo.send_message(prompt) 
     print(convo.last.text)
-    return jsonify(response = convo.last.text)
+    response = jsonify(response = convo.last.text)
+    response.headers['Access-Control-Allow-Credentials'] = True
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    response.headers['']
 @app.route('/test')
 def check():
     return 'hello world'
