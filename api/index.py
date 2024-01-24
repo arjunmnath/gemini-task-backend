@@ -96,7 +96,4 @@ def main():
     response.headers['Access-Control-Allow-Credentials'] = True
     response.headers['Access-Control-Allow-Origin'] = '*'
     response.headers['']
-@app.route('/test')
-def check():
-    return 'hello world'
-
+    return response
