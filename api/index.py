@@ -89,7 +89,6 @@ convo = model.start_chat(history=[
   # )
 @app.route('/', methods=['GET'])
 def main():
-    res
     prompt = request.args.get('prompt')
     convo.send_message(prompt) 
     print(convo.last.text)
