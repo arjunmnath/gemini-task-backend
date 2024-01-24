@@ -77,7 +77,7 @@ convo = model.start_chat(history=[
     "parts": ["It's likely that you have pneumonia. This is a lung infection that can cause coughing, tightness in the chest, and fatigue. It can also cause fever, chills, and shortness of breath. You should see a doctor as soon as possible so that you can get treatment."]
   },
 ])
-
+@app.route("/")
 def main():
     prompt = request.args.get('prompt')
     convo.send_message(prompt) 
