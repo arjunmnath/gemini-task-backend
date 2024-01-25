@@ -1,8 +1,11 @@
 
 from flask import Flask,jsonify, request
+from flask_cors import CORS, cross_origin
 
 API_KEY = "AIzaSyBcTjWj4lvncBirGPkSo4UhszdQlmOoMDw"
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 """
 At the command line, only need to run once to install the package via pip:
@@ -139,6 +142,7 @@ convo = model.start_chat(history=[
 
 
 @app.route("/")
+@cross_origin()
 def main():
     prompt = request.args.get('prompt')
     convo.send_message(prompt) 
